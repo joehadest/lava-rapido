@@ -1,0 +1,162 @@
+.not-found {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    padding: 40px 20px;
+}
+
+.not-found-content {
+    max-width: 600px;
+    text-align: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+.not-found-title {
+    font-size: 120px;
+    font-weight: 700;
+    margin: 0;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+    text-shadow: 2px 2px 10px rgba(0, 114, 255, 0.3);
+}
+
+.not-found-subtitle {
+    font-size: 28px;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+
+.not-found-illustration {
+    position: relative;
+    height: 120px;
+    margin: 40px 0;
+}
+
+.car {
+    font-size: 60px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: carMove 4s ease-in-out infinite;
+}
+
+.water-drops {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translateX(-50%);
+}
+
+.water-drops span {
+    font-size: 24px;
+    position: absolute;
+    animation: waterDrop 2s linear infinite;
+    opacity: 0;
+}
+
+.water-drops span:nth-child(1) {
+    animation-delay: 0s;
+    left: -20px;
+}
+
+.water-drops span:nth-child(2) {
+    animation-delay: 0.6s;
+    left: 0;
+}
+
+.water-drops span:nth-child(3) {
+    animation-delay: 1.2s;
+    left: 20px;
+}
+
+@keyframes carMove {
+
+    0%,
+    100% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(-50%, -50%) rotate(-2deg);
+    }
+
+    75% {
+        transform: translate(-50%, -50%) rotate(2deg);
+    }
+}
+
+@keyframes waterDrop {
+    0% {
+        top: -20px;
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 0.8;
+    }
+
+    100% {
+        top: 100px;
+        opacity: 0;
+    }
+}
+
+.not-found-text {
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: #666;
+}
+
+.not-found-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.btn-outline-primary {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    transition: all 0.3s;
+}
+
+.btn-outline-primary:hover {
+    background: var(--primary-color);
+    color: white;
+}
+
+@media (max-width: 576px) {
+    .not-found-title {
+        font-size: 80px;
+    }
+
+    .not-found-subtitle {
+        font-size: 22px;
+    }
+
+    .not-found-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .not-found-text {
+        font-size: 16px;
+    }
+
+    .car {
+        font-size: 40px;
+    }
+
+    .water-drops span {
+        font-size: 18px;
+    }
+}

@@ -1,0 +1,254 @@
+.service-card {
+    background-color: #fff;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    transition: transform 0.4s, box-shadow 0.4s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 35px rgba(0, 114, 255, 0.2);
+}
+
+.service-image {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.service-image:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0) 100%);
+}
+
+/* Adicionar um efeito de zoom suave quando passar o mouse */
+.service-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.service-card:hover .service-image::before {
+    opacity: 1;
+}
+
+.service-content {
+    padding: 25px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.service-title {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: var(--text-color);
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.service-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--gradient-primary);
+    border-radius: 3px;
+}
+
+.service-description {
+    margin-bottom: 20px;
+    color: #666;
+    font-size: 15px;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.service-details {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px 0;
+    border-top: 1px dashed #eaeaea;
+    border-bottom: 1px dashed #eaeaea;
+}
+
+.service-price {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--accent-color);
+    display: flex;
+    align-items: center;
+}
+
+.service-price:before {
+    content: '$';
+    font-size: 14px;
+    margin-right: 2px;
+    opacity: 0.7;
+}
+
+.service-duration {
+    font-size: 14px;
+    color: #666;
+    display: flex;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+
+.duration-icon {
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.service-button {
+    width: 100%;
+    text-align: center;
+    margin-top: auto;
+    transform: translateY(0);
+    transition: transform 0.3s;
+}
+
+.service-card:hover .service-button {
+    transform: translateY(-3px);
+}
+
+/* Estilos para os placeholders */
+.placeholder {
+    background-image: none !important;
+    background: var(--gradient-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.placeholder:before {
+    content: '';
+    position: absolute;
+    width: 150%;
+    height: 150%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: rotate(45deg);
+    top: -40%;
+    left: -40%;
+    animation: shine 3s infinite;
+}
+
+@keyframes shine {
+    0% {
+        top: -40%;
+        left: -40%;
+    }
+
+    100% {
+        top: 120%;
+        left: 120%;
+    }
+}
+
+.placeholder-text {
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.4);
+    position: relative;
+    z-index: 2;
+}
+
+/* Tag de desconto ou promoção */
+.service-card .promo-tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--gradient-accent);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 10;
+    box-shadow: 0 3px 10px rgba(255, 126, 0, 0.3);
+}
+
+.service-badge {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--gradient-accent);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    z-index: 10;
+    box-shadow: 0 3px 10px rgba(255, 126, 0, 0.3);
+}
+
+.service-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.highlight-tag {
+    background-color: rgba(0, 114, 255, 0.1);
+    color: var(--primary-color);
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+/* Media queries */
+@media (max-width: 768px) {
+    .service-image {
+        height: 180px;
+    }
+
+    .service-title {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .service-content {
+        padding: 15px;
+    }
+
+    .service-image {
+        height: 160px;
+    }
+
+    .placeholder-text {
+        font-size: 18px;
+    }
+}

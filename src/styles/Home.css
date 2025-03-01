@@ -1,0 +1,480 @@
+.home-page .hero {
+    position: relative;
+    height: 600px;
+    border-radius: 0;
+    /* Removido border-radius */
+    margin-top: -20px;
+    margin-left: 0;
+    /* Removidas margens laterais */
+    margin-right: 0;
+    /* Removidas margens laterais */
+    overflow: hidden;
+    background-image: linear-gradient(135deg, rgba(0, 114, 255, 0.8) 0%, rgba(0, 198, 255, 0.8) 100%);
+    background-size: cover;
+    background-position: center;
+    background-blend-mode: overlay;
+}
+
+/* Adicionar padrão de bolhas no fundo do hero */
+.hero:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10.5%),
+        radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 10.5%);
+    background-size: 50px 50px, 100px 100px;
+    background-position: 0 0, 25px 25px;
+    animation: bubbleMove 60s linear infinite;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.home-page .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
+@keyframes bubbleMove {
+    0% {
+        background-position: 0 0, 25px 25px;
+    }
+
+    100% {
+        background-position: 1000px 0, 1025px 25px;
+    }
+}
+
+.hero-content {
+    text-align: center;
+    max-width: 800px;
+    padding: 0 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+    opacity: 0.9;
+    animation: fadeInUp 0.8s ease-out 0.2s forwards;
+    opacity: 0;
+}
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    animation: fadeInUp 0.8s ease-out 0.4s forwards;
+    opacity: 0;
+}
+
+.hero-buttons .btn {
+    min-width: 180px;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: var(--text-color);
+}
+
+/* Seção de vantagens com ícones mais chamativos */
+.advantages {
+    padding: 80px 0 60px;
+    position: relative;
+}
+
+.advantages-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.advantage-item {
+    text-align: center;
+    padding: 30px 20px;
+    transition: transform 0.4s;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.advantage-item:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+}
+
+.advantage-item:hover {
+    transform: translateY(-10px);
+}
+
+.advantage-icon {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.advantage-item h3 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+/* Seção de serviços em destaque */
+.featured-services {
+    padding: 60px 0;
+    background-color: #f8f9fb;
+    border-radius: 0;
+    /* Removido border-radius */
+    margin: 0;
+    /* Removidas margens */
+}
+
+.see-more {
+    text-align: center;
+    margin-top: 40px;
+}
+
+.see-more .btn {
+    min-width: 220px;
+}
+
+/* Seção CTA com gradiente de cores */
+.cta-section {
+    background: var(--gradient-accent);
+    padding: 60px 0;
+    text-align: center;
+    color: white;
+    border-radius: 0;
+    /* Removido border-radius */
+    margin: 0;
+    /* Removidas margens */
+    position: relative;
+    overflow: hidden;
+}
+
+.cta-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1IiBoZWlnaHQ9IjUiPgo8cmVjdCB3aWR0aD0iNSIgaGVpZ2h0PSI1IiBmaWxsPSIjZmZmIj48L3JlY3Q+CjxyZWN0IHdpZHRoPSIxIiBoZWlnaHQ9IjEiIGZpbGw9InJnYmEoMjU1LDI1NSwyNTUsMC4zKSI+PC9yZWN0Pgo8L3N2Zz4=');
+    opacity: 0.1;
+}
+
+.cta-section h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cta-section p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-large {
+    padding: 15px 35px;
+    font-size: 18px;
+    font-weight: 600;
+    background: white;
+    color: var(--accent-color);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: none;
+}
+
+.btn-large:hover {
+    background: var(--light-text);
+    color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+/* Seção de depoimentos melhorada */
+.testimonials {
+    padding: 80px 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.testimonial-card {
+    background-color: white;
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    height: 100%;
+    position: relative;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-card:before {
+    content: '"';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 60px;
+    font-family: Georgia, serif;
+    color: var(--primary-color);
+    opacity: 0.1;
+    line-height: 1;
+}
+
+.testimonial-rating {
+    color: #FFD700;
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+}
+
+.testimonial-author {
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: right;
+    font-size: 16px;
+}
+
+/* Adição de estilo para o destaque da marca Vonix na página inicial */
+.vonix-highlight {
+    padding: 60px 0;
+    background-color: #f1f7fe;
+    margin: 0;
+    /* Removidas margens */
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    /* Removido border-radius */
+}
+
+.vonix-highlight:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: var(--gradient-primary);
+}
+
+.vonix-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.vonix-content h2 {
+    color: var(--primary-color);
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.vonix-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+.vonix-image-container {
+    margin: 30px auto;
+    max-width: 500px;
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+}
+
+.vonix-featured-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.vonix-image-container:hover .vonix-featured-image {
+    transform: scale(1.03);
+}
+
+/* Seção de depoimentos atualizada com formulário */
+.review-section {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 30px;
+}
+
+/* Media Queries para Responsividade */
+@media (max-width: 992px) {
+    .hero {
+        height: 400px;
+    }
+
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 18px;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .cta-section h2 {
+        font-size: 28px;
+    }
+
+    .cta-section p {
+        font-size: 16px;
+    }
+
+    .review-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .hero {
+        height: 350px;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-subtitle {
+        font-size: 16px;
+    }
+
+    .section-title {
+        font-size: 24px;
+    }
+
+    .cta-section {
+        padding: 40px 0;
+    }
+
+    .cta-section h2 {
+        font-size: 28px;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero {
+        height: 300px;
+    }
+
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    .advantages {
+        padding: 40px 0;
+    }
+
+    .featured-services {
+        padding: 40px 0;
+    }
+
+    .cta-section h2 {
+        font-size: 22px;
+    }
+
+    .home-page .hero {
+        background-position: center 20%;
+    }
+
+    .vonix-highlight,
+    .featured-services,
+    .cta-section {
+        padding: 40px 0;
+    }
+}
