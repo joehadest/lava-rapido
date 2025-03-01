@@ -25,6 +25,34 @@ function Booking() {
         }));
     };
 
+    // Função para abrir WhatsApp com os dados do agendamento
+    const openWhatsApp = () => {
+        // Número de telefone do proprietário do lava-jato
+        const phoneNumber = "558499874915";
+
+        // Formata a data para ser legível
+        const formattedDate = format(new Date(formData.date), "dd/MM/yyyy", { locale: ptBR });
+
+        // Constrói mensagem com detalhes do agendamento
+        const message = `*Novo Agendamento*
+- *Cliente:* ${formData.name}
+- *Serviço:* ${formData.service}
+- *Veículo:* ${formData.vehicleType === 'carro' ? 'Carro' : 'Moto'}
+- *Data:* ${formattedDate}
+- *Horário:* ${formData.time}
+- *Contato:* ${formData.phone}
+- *Email:* ${formData.email}
+${formData.comments ? `- *Observações:* ${formData.comments}` : ''}
+        `;
+
+        // Codifica a mensagem para URL
+        const encodedMessage = encodeURIComponent(message);
+
+        // Cria o link do WhatsApp e abre em nova janela
+        const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+        window.open(whatsappURL, '_blank');
+    };
+
     const handleSubmit = (e) => {
         e.preventDefault();
         // Aqui você adicionaria a lógica para enviar os dados para o backend
@@ -38,6 +66,11 @@ function Booking() {
 
         setTimeout(() => {
             setSubmitted(true);
+
+            // Abre o WhatsApp assim que mostrar a tela de confirmação
+            setTimeout(() => {
+                openWhatsApp();
+            }, 1000);
         }, 500);
     };
 
@@ -57,13 +90,21 @@ function Booking() {
                         {format(new Date(formData.date), "dd 'de' MMMM 'de' yyyy", { locale: ptBR })} às {formData.time}
                     </div>
                     <p>Enviaremos uma confirmação para seu email: <strong>{formData.email}</strong></p>
-                    <p>Se precisar realizar alguma alteração, entre em contato pelo telefone <strong>(11) 99999-9999</strong> ou responda o email de confirmação.</p>
-                    <button
-                        className="btn btn-accent"
-                        onClick={() => setSubmitted(false)}
-                    >
-                        Fazer novo agendamento
-                    </button>
+                    <p>Se precisar realizar alguma alteração, entre em contato pelo telefone <strong>(84) 9987-4915</strong> ou responda o email de confirmação.</p>
+                    <div className="booking-actions">
+                        <button
+                            className="btn btn-primary"
+                            onClick={openWhatsApp}
+                        >
+                            Enviar Detalhes por WhatsApp
+                        </button>
+                        <button
+                            className="btn btn-accent"
+                            onClick={() => setSubmitted(false)}
+                        >
+                            Fazer novo agendamento
+                        </button>
+                    </div>
                 </div>
             </div>
         );

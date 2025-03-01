@@ -380,6 +380,19 @@
     z-index: 1;
 }
 
+.booking-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.booking-actions .btn {
+    min-width: 200px;
+    margin-top: 10px;
+}
+
 @media (max-width: 992px) {
     .booking-container {
         grid-template-columns: 1fr 1.5fr;
@@ -438,5 +451,13 @@
     .booking-date {
         font-size: 16px;
         padding: 12px;
+    }
+
+    .booking-actions {
+        flex-direction: column;
+    }
+
+    .booking-actions .btn {
+        width: 100%;
     }
 }
