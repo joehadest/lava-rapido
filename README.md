@@ -1,94 +1,57 @@
-# Lava Rápido Pro - Website
+# Lava Rápido Profissional
 
-Este é um site para um serviço de lava rápido profissional, permitindo que os clientes conheçam os serviços oferecidos e agendem horários online.
+Site completo para um serviço de Lava Rápido profissional especializado em carros e motos.
 
-## Funcionalidades
+## Características
 
-- Página inicial com destaques de serviços
-- Catálogo completo de serviços com preços
+- Design moderno e responsivo
 - Sistema de agendamento online
-- Formulário de contato
-- Design responsivo para todas as plataformas
+- Exibição de serviços disponíveis
+- Avaliações de clientes
+- Interface para desktop e dispositivos móveis
+
+## Serviços
+
+- Lavagem de Carros (R$50)
+- Lavagem de Motos (R$30)
+- Pintura de Escapamento para Motos (R$50)
+- Todos os serviços incluem produtos Vonixx
 
 ## Tecnologias Utilizadas
 
-- React
-- React Router
-- CSS Moderno
-- date-fns para formatação de datas
+- React.js
+- CSS3 com animações
+- React Router para navegação
+- Componentes reutilizáveis
+- Design mobile-first
+
+## Como Instalar e Executar
+
+1. Clone o repositório:
+```bash
+git clone https://github.com/joehadest/lava-rapido.git
+cd lava-rapido
+```
+
+2. Instale as dependências:
+```bash
+npm install
+```
+
+3. Execute o projeto:
+```bash
+npm start
+```
+
+4. Abra o navegador em [http://localhost:3000](http://localhost:3000)
 
 ## Estrutura do Projeto
 
-```
-lava-rapido/
-├── public/
-│   ├── images/
-│   ├── index.html
-│   └── manifest.json
-├── src/
-│   ├── components/
-│   │   ├── Footer.jsx
-│   │   ├── Header.jsx
-│   │   └── ServiceCard.jsx
-│   ├── pages/
-│   │   ├── Booking.jsx
-│   │   ├── Contact.jsx
-│   │   ├── Home.jsx
-│   │   └── Services.jsx
-│   ├── styles/
-│   │   ├── Booking.css
-│   │   ├── Contact.css
-│   │   ├── Footer.css
-│   │   ├── Header.css
-│   │   ├── Home.css
-│   │   ├── ServiceCard.css
-│   │   ├── Services.css
-│   │   └── main.css
-│   ├── App.jsx
-│   ├── index.js
-│   └── reportWebVitals.js
-└── package.json
-```
+- `/src/components`: Componentes reutilizáveis
+- `/src/pages`: Páginas principais
+- `/src/styles`: Arquivos CSS
+- `/public/images`: Imagens utilizadas
 
-## Instalação e Execução
+## Créditos
 
-1. Clone o repositório
-2. Instale as dependências:
-   ```
-   npm install
-   ```
-3. Inicie o servidor de desenvolvimento:
-   ```
-   npm start
-   ```
-4. Acesse o site em `http://localhost:3000`
-
-## Páginas do Site
-
-### Home
-Página inicial com destaque para os principais serviços e vantagens do lava rápido.
-
-### Serviços
-Catálogo completo dos serviços oferecidos com detalhes, preços e duração estimada.
-
-### Agendamento
-Formulário para os clientes agendarem horários para lavagem de seus veículos.
-
-### Contato
-Informações de contato do estabelecimento e formulário para envio de mensagens.
-
-## Customização
-
-Para personalizar o site para as necessidades específicas do seu lava rápido:
-
-1. Altere as cores do tema no arquivo `src/styles/main.css`
-2. Atualize as informações de serviços em `src/pages/Services.jsx`
-3. Modifique o logo e imagens na pasta `public/images/`
-4. Atualize as informações de contato em `src/pages/Contact.jsx`
-
-## Implementações Futuras
-
-- Sistema de login para clientes frequentes
-- Histórico de serviços realizados
-- Sistema de fidelidade com pontos e descontos
-- Integração com pagamento online
+Desenvolvido por joehadest. Utiliza imagens da Unsplash e produtos da linha Vonixx.
